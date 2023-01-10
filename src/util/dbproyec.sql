@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 27-12-2022 a las 21:03:46
+-- Tiempo de generación: 10-01-2023 a las 03:38:33
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.4
 
@@ -43,6 +43,24 @@ INSERT INTO `login` (`id`, `username`, `password`) VALUES
 (4, 'lorena', '12345'),
 (5, 'Parra', '$2a$08$3m4lgUUnkVjOcFFOBr1W9.PEedWSCjXKfS3AS/CX5QrZ/hE6Vpmb.');
 
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `peso`
+--
+
+CREATE TABLE `peso` (
+  `id` int(250) NOT NULL,
+  `peso` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `peso`
+--
+
+INSERT INTO `peso` (`id`, `peso`) VALUES
+(1, '12');
+
 --
 -- Índices para tablas volcadas
 --
@@ -54,6 +72,12 @@ ALTER TABLE `login`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indices de la tabla `peso`
+--
+ALTER TABLE `peso`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
@@ -62,6 +86,12 @@ ALTER TABLE `login`
 --
 ALTER TABLE `login`
   MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT de la tabla `peso`
+--
+ALTER TABLE `peso`
+  MODIFY `id` int(250) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
