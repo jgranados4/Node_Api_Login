@@ -69,6 +69,27 @@ VALUES(?,?)`;
     }
   );
 };
+//!Ingresar peso
+controller.saveP = (req, res) => {
+  const { peso } = req.body;
+  console.log(peso);
+  const query = `INSERT INTO peso(peso)
+VALUES(?)`;
+  MysqlConnection.query(query, [peso], (err, rows, fields) => {
+    if (!err) {
+      res.json({
+        error: false,
+        message: " Saved",
+      });
+    } else {
+      res.json({
+        error: true,
+        message: err,
+      });
+      console.log(err);
+    }
+  });
+};
 //Autenticacion
 controller.auth = async (req, res, next) => {
   let { username, password } = req.body;
