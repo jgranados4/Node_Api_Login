@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 10-01-2023 a las 03:38:33
+-- Tiempo de generación: 11-01-2023 a las 20:40:16
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.4
 
@@ -29,6 +29,8 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `login` (
   `id` int(50) NOT NULL,
+  `Fullname` varchar(150) NOT NULL,
+  `Email` varchar(150) NOT NULL,
   `username` varchar(50) NOT NULL,
   `password` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -37,11 +39,12 @@ CREATE TABLE `login` (
 -- Volcado de datos para la tabla `login`
 --
 
-INSERT INTO `login` (`id`, `username`, `password`) VALUES
-(1, 'juan', '12345'),
-(3, 'alex', '123456'),
-(4, 'lorena', '12345'),
-(5, 'Parra', '$2a$08$3m4lgUUnkVjOcFFOBr1W9.PEedWSCjXKfS3AS/CX5QrZ/hE6Vpmb.');
+INSERT INTO `login` (`id`, `Fullname`, `Email`, `username`, `password`) VALUES
+(1, '', '', 'juan', '12345'),
+(3, '', '', 'alex', '123456'),
+(4, '', '', 'lorena', '12345'),
+(5, '', '', 'Parra', '$2a$08$3m4lgUUnkVjOcFFOBr1W9.PEedWSCjXKfS3AS/CX5QrZ/hE6Vpmb.'),
+(7, 'juan', 'juan123@yahoo.com', 'granados', '$2a$08$Pwrkh9jcGRXjyuppeIBJnOihFWKpe0Pz.pp7jnwN/dAY9x4mWF2D2');
 
 -- --------------------------------------------------------
 
@@ -85,7 +88,7 @@ ALTER TABLE `peso`
 -- AUTO_INCREMENT de la tabla `login`
 --
 ALTER TABLE `login`
-  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de la tabla `peso`
