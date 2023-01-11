@@ -45,14 +45,14 @@ controller.get = (req, res) => {
 };
 //INSERT
 controller.save = async (req, res, next) => {
-  let { username, password } = req.body;
+  let { Fullname,Email,username, password } = req.body;
   let passwordHash = await Bcrypt.hash(password, 8);
-  console.log(username, password, passwordHash);
-  const query = `INSERT INTO login(username,password)
-VALUES(?,?)`;
+  console.log(Fullname, Email,username, password, passwordHash);
+  const query = `INSERT INTO login(Fullname, Email,username,password)
+VALUES(?,?,?,?)`;
   MysqlConnection.query(
     query,
-    [username, (password = passwordHash)],
+    [Fullname, Email, username, (password = passwordHash)],
     (err, rows, fields) => {
       if (!err) {
         res.json({
